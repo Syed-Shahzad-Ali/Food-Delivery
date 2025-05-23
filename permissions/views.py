@@ -27,7 +27,7 @@ class RoleViews(ModelViewSet):
         return role_controller.create(request)
     
 
-    @permission_required(['read_role'])
+    # @permission_required(['read_role'])
 
     
     def get_role(self, request):

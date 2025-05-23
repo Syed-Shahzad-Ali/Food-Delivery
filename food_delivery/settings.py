@@ -26,6 +26,13 @@ SECRET_KEY = 'django-insecure-7mt1l%uen)t85me)-ub9+h^8l8(pnvrahyv5y^b_$=0!ocvrup
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'user_auth.User'
+
+JWT_ENCODING_ALGO= 'HS256'
+JWT_ENCODING_SECRET_KEY= 'Cyber@123'
+JWT_TOKEN_EXPIRY_DELTA= 300000000
+AUTH_USER_MODEL = 'user_auth.User'
+AUTHENTICATION_BACKENDS = ['user_auth.authentication.EmailBackend']
 
 
 # Application definition
@@ -38,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'permissions'
+    'permissions',
+    'user_auth'
 ]
 
 MIDDLEWARE = [
